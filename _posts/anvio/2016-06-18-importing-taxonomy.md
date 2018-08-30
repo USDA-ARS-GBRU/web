@@ -85,7 +85,7 @@ Cool?
 Now its time to add taxon names so that the anvi'o parser can add the taxonomy to the contigs database. The `addTaxonNames` script needs location of the `nodes.dmp` file, location of the `names.dmp` file, the output from the Kaiju classification step, and an output name. Most importantly you **must** specify the taxonomic ranks to be included in the output as follows using the `-r` flag. **Comma-separated, NO SPACES**. 
 
 ```
--r superkingdom,phylum,order,class,family,genus,species
+-r superkingdom,phylum,class,order,family,genus,species
 ```
 
 So the full command will look something like this:
@@ -95,7 +95,7 @@ addTaxonNames -t /path/to/nodes.dmp \
               -n /path/to/names.dmp \
               -i gene_calls_nr.out \
               -o gene_calls_nr.names \
-              -r superkingdom,phylum,order,class,family,genus,species
+              -r superkingdom,phylum,class,order,family,genus,species
 ```
 
 Whew. **Now you are ready to run the anvi'o parser for Kaiju**.
@@ -112,7 +112,7 @@ After this, anvi'o will immediately throw the following error --not because anvi
 
 ```
 Config Error: Anvi'o assumes you used this exact parameter during your kaiju run: '-r        
-              superkingdom,phylum,order,class,family,genus,species'. If you haven't, you will
+              superkingdom,phylum,class,order,family,genus,species'. If you haven't, you will
               run into trouble later. If you are positive that you did include that parameter
               to your run, re-run this program with `--just-do-it` flag
 ```
